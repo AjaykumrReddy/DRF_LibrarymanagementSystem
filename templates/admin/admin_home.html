@@ -1,0 +1,15 @@
+{% extends 'admin/admin_base.html' %} {% load static %} {% block content %}
+
+{% load static %}
+<style>
+  img{
+    height: 100%;
+    width: 100%;
+  }
+</style>
+<div class="bg-overlay">
+  <img src="{% static 'images/library.jpg' %}" alt="library" />
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css?family=Exo:400,700");
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Exo", sans-serif;
+}
+
+/* navbar styles */
+.navbar-brand {
+  font-size: 36px;
+  font-weight: bolder;
+  background: -webkit-linear-gradient(orangered, white, green);
+  background-clip: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav-item {
+  color: white;
+  font-size: larger;
+}
+
+/* End navbar styles */
+.formContainer {
+  background-color: beige;
+  padding: 2em 2em 5em 2em;
+  
+  border-radius: 10px;
+  width: 50%;
+}
+.button {
+  background: #3498db;
+  background-image: linear-gradient(to bottom, #3498db, #114c74);
+  -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  height: 40px;
+  border-color: #99d6ff;
+  border-radius: 5px;
+  width: 80px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 18px;
+  text-decoration: none;
+}
+.button:hover{
+  background: blue;
+}
+
+@media screen and (max-width: 720px) {
+  .formContainer {
+    background-color: beige;
+    margin-top:5px;
+    /* margin: 1px; */
+    border-radius: 10px;
+    width: 90%;
+  }
+}

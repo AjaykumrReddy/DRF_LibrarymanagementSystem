@@ -1,0 +1,75 @@
+{% extends 'base.html' %} 
+{% block title %}Admin Register{% endblock %}
+{% block content %}
+<center>
+  <div class="container" style="padding-top: 5em; padding-bottom: 2em">
+    <div class="formContainer">
+      {% if error %}
+      <h5>Email Exists already</h5>
+      {% endif %}
+      <form action="{% url 'admin_register' %}" method="POST">
+        {% csrf_token %}
+        <table style="margin: 20px">
+          <tbody>
+            <tr>
+              <th>
+                <label for="name">Name:</label>
+              </th>
+              <td>
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control"
+                  pattern="[a-z A-Z]*$"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <label for="email">Email:</label>
+              </th>
+              <td>
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <label for="password">Password:</label>
+              </th>
+              <td>
+                <input
+                  type="password"
+                  name="password"
+                  class="form-control"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                  required
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <input type="submit" class="button" value="Sign Up" />
+      </form>
+      {% if success %}
+      <h5>
+        Registered Successfully<a href="{% url 'admin_login' %}"> Sign In</a> to
+        continue.
+      </h5>
+      {% else %}
+      <h5>
+        Already have an Account ?<a href="{% url 'admin_login' %}">
+          Sign In here</a
+        >
+      </h5>
+      {% endif %}
+    </div>
+  </div>
+</center>
+{% endblock %}

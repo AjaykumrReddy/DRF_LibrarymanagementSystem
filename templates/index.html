@@ -1,0 +1,15 @@
+{% extends 'base.html' %} 
+{% block title %}Library | Home{% endblock %}
+{% block content %} 
+{% load static %}
+<style>
+  img{
+    height: 100%;
+    width: 100%;
+  }
+</style>
+<div class="bg-overlay">
+  <img src="{% static 'images/library.jpg' %}" alt="library" />
+</div>
+
+{% endblock %}
